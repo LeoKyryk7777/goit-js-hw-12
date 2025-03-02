@@ -70,3 +70,31 @@
 .hidden {
   display: none;
 }
+
+.btn{
+  margin-left: 10px;
+    padding: 10px 15px;
+    border: none;
+    background-color: #4a73ff;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+     
+      
+}
+.btn:hover {
+  background-color: #3659e3;
+}
+.container{
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.js-loader{
+      align-items: center;
+      justify-content: center;
+}
