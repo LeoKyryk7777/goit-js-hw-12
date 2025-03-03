@@ -42,6 +42,7 @@ async function searchImages(e) {
     );
 
     if (result.hits.length === 0) {
+      hideLoader();
       hidebtnNext();
       iziToast.error({
         message:
@@ -64,6 +65,7 @@ async function searchImages(e) {
     }
   } catch (error) {
     refs.gallery.innerHTML = '';
+    hideLoader();
     iziToast.error({
       message:
         'Sorry, there are no images matching your search query. Please try again!',
@@ -74,6 +76,7 @@ async function searchImages(e) {
       messageLineHeight: '24px',
       maxWidth: '432px',
     });
+
     console.log(error);
   }
 
