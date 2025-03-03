@@ -26,6 +26,7 @@ hidebtnNext();
 refs.form.addEventListener('submit', searchImages);
 
 async function searchImages(e) {
+  showLoader();
   e.preventDefault();
   refs.gallery.innerHTML = '';
 
@@ -56,7 +57,7 @@ async function searchImages(e) {
       const markup = imagesTemplate(result.hits);
       refs.gallery.innerHTML = markup;
       params.total = result.totalHits;
-
+      hideLoader();
       checkBtnStatus();
 
       lightbox = new SimpleLightbox('.gallery a');
