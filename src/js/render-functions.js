@@ -1,6 +1,4 @@
-import { refs } from './pixabay-api';
-
-export function imageTemplate(img) {
+export function imageTemplate(item) {
   const {
     largeImageURL,
     webformatURL,
@@ -9,8 +7,8 @@ export function imageTemplate(img) {
     views,
     comments,
     downloads,
-  } = img;
-  const markup = `<li class="photo-card">
+  } = item;
+  return `<li class="photo-card">
   <a class="gallery-link" href="${largeImageURL}">
     <img
       class="gallery-image"
@@ -25,15 +23,8 @@ export function imageTemplate(img) {
         <p>Downloads: <span class="downloads">${downloads}</span></p>
       </div>
 </li>`;
-  return markup;
 }
 
-export function showLoader() {
-  refs.gallery.classList.add('hidden');
-  refs.loader.classList.remove('hidden');
-}
-
-export function hideLoader() {
-  refs.loader.classList.add('hidden');
-  refs.gallery.classList.remove('hidden');
+export function imagesTemplate(arr) {
+  return arr.map(imageTemplate).join('');
 }
